@@ -1,0 +1,17 @@
+.canvas {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    max-width: 874px;
+    max-height: 498px;
+    gap: 60px;
+    padding: 73px 70px 80px 70px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+@import url('./style/canvas__container-left.css');
+@import url('./style/canvas__container-right.css');
+@import url('./style/canvas__title.css');
+@import url('./style/canvas__text.css');
+@import url('./style/canvas__button.css');

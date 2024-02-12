@@ -1,0 +1,21 @@
+.panel__slider-option {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../../img/arrow.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+
+    color: rgb(68, 68, 68);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-left: 6px;
+    border: none;
+    display: flex;
+    min-width: 40px;
+}

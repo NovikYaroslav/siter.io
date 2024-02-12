@@ -1,0 +1,17 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    width:240px;
+    height: 100%;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+@import url('./styles/panel__slider-container.css');
+@import url('./styles/panel__slider-title.css');
+@import url('./styles/panel__slider-value.css');
+@import url('./styles/panel__slider.css');
+@import url('./styles/panel__slider-option.css');
+@import url('./styles/panel__slider-button.css');

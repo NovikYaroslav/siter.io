@@ -1,0 +1,14 @@
+.panel__slider-container {
+    display: flex;
+gap: 10px;
+    align-items: center;
+    width: 208px;
+    height: 16px;
+
+}
+
+.panel__slider-container_dropdown {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}

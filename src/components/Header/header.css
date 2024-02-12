@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+    height: 58px;
+    padding-left: 14.7px;
+    padding-right: 11.76px;
+    background-color: rgb(34, 34, 34);
+}
+
+@import url('./styles/header__logo.css');
+@import url('./styles/header__button.css');

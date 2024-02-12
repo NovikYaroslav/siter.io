@@ -1,0 +1,47 @@
+.selection__rectagle {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    left: 137px;
+    top: 42px; 
+    box-sizing: border-box;
+border: 1px solid rgb(62, 135, 248);
+border-radius: 2px;
+background: rgb(255, 255, 255);
+}
+
+.selection__rectagle_top-right {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    left: 137px;
+    top: 0;
+    box-sizing: border-box;
+border: 1px solid rgb(62, 135, 248);
+border-radius: 2px;
+background: rgb(255, 255, 255);
+}
+
+.selection__rectagle_top-left {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+border: 1px solid rgb(62, 135, 248);
+border-radius: 2px;
+background: rgb(255, 255, 255);
+}
+
+.selection__rectagle_bottom-left {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 42px;
+    box-sizing: border-box;
+border: 1px solid rgb(62, 135, 248);
+border-radius: 2px;
+background: rgb(255, 255, 255); 
+}

@@ -1,0 +1,6 @@
+.canvas__container-left {
+    display: flex;
+    flex-direction: column;
+    width: 374px;
+    gap: 20px
+}

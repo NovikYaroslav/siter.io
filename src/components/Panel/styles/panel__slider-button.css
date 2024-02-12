@@ -1,0 +1,14 @@
+.panel__slider-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+   margin-left: 7px;
+}
+
+.panel__slider-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

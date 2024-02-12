@@ -1,0 +1,12 @@
+.selection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 146px;
+    height: 51px;
+    background: rgb(255, 255, 255);
+}
+
+@import url('./styles/selection__rectagle.css');
+@import url('./styles/selection__container.css');

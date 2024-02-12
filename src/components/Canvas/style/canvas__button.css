@@ -1,0 +1,22 @@
+.canvas__button {
+    text-decoration: none;
+    width: 136px;
+    height: 41px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background: rgb(112, 178, 255);
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.canvas__button:hover {
+cursor: pointer;
+opacity: 0.8;
+}
