@@ -1,23 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './panel.css';
-import { settings } from '../../utils/data';
+import { settings, easingOptions } from '../../utils/data';
 import { formatSliderValue } from '../../utils/formating-functions';
+import { useAnimation } from '../../context/AnimationContext';
+import { ValueExtractor } from '../../utils/formating-functions';
 import arrow from '../../img/arrow.svg';
 import off from '../../img/Checkbox.png';
 import on from '../../img/Checkbox.svg';
 
 export default function Panel() {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-  const [opacity, setOpacity] = useState(0);
-  const [scale, setScale] = useState(0);
-  const [blur, setBlur] = useState(0);
-  const [speed, setSpeed] = useState(0);
-  const [delay, setDelay] = useState(0);
-  const [replay, setReplay] = useState(false);
+  const { elements, selectedElement, editAnimation } = useAnimation();
 
-  const handleSliderChange = (event, setState) => {
-    setState(event.target.value);
+  const [replay, setReplay] = useState(false);
+  const [easing, setEasing] = useState('Easy');
+
+  // Поправь чтобы слайдеры отдавали число а не стригу
+
+  useEffect(() => {
+    if (selectedElement) {
+      setReplay(ValueExtractor(elements, selectedElement, 'replay'));
+      setEasing(ValueExtractor(elements, selectedElement, 'easing'));
+    }
+  }, [selectedElement]);
+
+  const handleSliderChange = (event) => {
+    editAnimation(selectedElement, event.target.id, event.target.value);
+  };
+
+  const handleEasingChange = (event) => {
+    setEasing(event.target.value);
+    editAnimation(selectedElement, 'easing', event.target.value);
+  };
+
+  const handleReplayChange = () => {
+    setReplay(!replay);
+    editAnimation(selectedElement, 'replay', !replay);
   };
 
   const calculateGradient = (value, min, max) => {
@@ -40,28 +57,19 @@ export default function Panel() {
   return (
     <div className='panel'>
       {settings.map((setting) => (
-        <div className='panel__slider-container' key={setting.name}>
+        <div className='panel__option-container' key={setting.name}>
           <label className='panel__slider-title'>{setting.name}</label>
           <input
             type='range'
             max={setting.max}
             min={setting.min}
             step={setting.step}
-            value={eval(setting.name)}
-            onChange={(event) =>
-              handleSliderChange(
-                event,
-                eval(
-                  'set' +
-                    setting.name.charAt(0).toUpperCase() +
-                    setting.name.slice(1)
-                )
-              )
-            }
+            value={ValueExtractor(elements, selectedElement, setting.name)}
+            onChange={(event) => handleSliderChange(event)}
             className='panel__slider'
             style={{
               background: calculateGradient(
-                eval(setting.name),
+                ValueExtractor(elements, selectedElement, setting.name),
                 setting.min,
                 setting.max
               ),
@@ -69,30 +77,33 @@ export default function Panel() {
             id={setting.name}
           />
           <label className='panel__slider-value'>
-            {formatSliderValue(eval(setting.name), setting.step)}
+            {ValueExtractor(elements, selectedElement, setting.name)}
             {setting.unit}
           </label>
         </div>
       ))}
-      <div className='panel__slider-container'>
-        <div className='panel__slider-container_dropdown'>
+      <div className='panel__option-container'>
+        <div className='panel__option-container_dropdown'>
           <label className='panel__slider-title'>Easing</label>
-          <select className='panel__slider-option'>
-            <option value='audi'>Easy</option>
-            <option value='volvo'>Easy-in</option>
-            <option value='saab'>Easy-out</option>
-            <option value='opel'>Easy-in-out</option>
+          <select
+            className='panel__slider-option'
+            onChange={(event) => handleEasingChange(event)}
+            value={easing}
+          >
+            {easingOptions.map((el) => (
+              <option value={el} key={el}>
+                {el}
+              </option>
+            ))}
           </select>
         </div>
       </div>
-      <div className='panel__slider-container'>
-        <div className='panel__slider-container_dropdown'>
+      <div className='panel__option-container'>
+        <div className='panel__option-container_dropdown'>
           <label className='panel__slider-title'>Replay</label>
           <button
             className='panel__slider-button'
-            onClick={() => {
-              setReplay(!replay);
-            }}
+            onClick={() => handleReplayChange()}
           >
             <img src={replay ? on : off} />
           </button>

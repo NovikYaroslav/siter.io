@@ -1,4 +1,4 @@
-.panel__slider-container {
+.panel__option-container {
     display: flex;
 gap: 10px;
     align-items: center;
@@ -7,7 +7,7 @@ gap: 10px;
 
 }
 
-.panel__slider-container_dropdown {
+.panel__option-container_dropdown {
     display: flex;
     gap: 0px;
     align-items: center;

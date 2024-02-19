@@ -1,3 +1,5 @@
+import { elementsData } from './data';
+
 export function formatSliderValue(value, step) {
   if (parseFloat(value) === 0) {
     return parseFloat(value).toFixed(0);
@@ -8,5 +10,16 @@ export function formatSliderValue(value, step) {
       .replace(/^0+/, '');
   } else {
     return parseFloat(value).toFixed(step.toString().split('.')[1]?.length);
+  }
+}
+
+export function ValueExtractor(elements, id, parameter) {
+  if (!id) {
+    return 0;
+  } else {
+    const selectedElement = elements.find((element) => element.id === id);
+    return parameter === 'easing'
+      ? selectedElement.animation[parameter]
+      : Number(selectedElement.animation[parameter]);
   }
 }

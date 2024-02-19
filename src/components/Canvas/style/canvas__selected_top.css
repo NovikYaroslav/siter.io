@@ -1,0 +1,27 @@
+.canvas__selected_top {
+    border: 1px solid rgb(62, 135, 248);
+    position: relative;
+}
+
+.canvas__selected_top::before,
+.canvas__selected_top::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(62, 135, 248);
+    border-radius: 2px;
+    z-index: 1; 
+    box-sizing: border-box;
+}
+
+.canvas__selected_top::before {
+    top: -4px;
+    left: -4px;
+}
+
+.canvas__selected_top::after {
+    top: -4px;
+    right: -4px;
+}

@@ -15,3 +15,7 @@
 @import url('./style/canvas__title.css');
 @import url('./style/canvas__text.css');
 @import url('./style/canvas__button.css');
+@import url('./style/canvas__selected_top.css');
+@import url('./style/canvas__selected_bottom.css');
+@import url('./style/canvas__picture.css');
+@import url('./style/canvas__shadow.css');

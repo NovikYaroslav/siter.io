@@ -9,7 +9,7 @@
     background-color: rgb(255, 255, 255);
 }
 
-@import url('./styles/panel__slider-container.css');
+@import url('./styles/panel__option-container.css');
 @import url('./styles/panel__slider-title.css');
 @import url('./styles/panel__slider-value.css');
 @import url('./styles/panel__slider.css');

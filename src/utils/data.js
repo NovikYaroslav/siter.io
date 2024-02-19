@@ -7,3 +7,64 @@ export const settings = [
   { name: 'speed', min: 0, max: 3, step: 0.1, unit: 's' },
   { name: 'delay', min: 0, max: 10, step: 1, unit: 's' },
 ];
+
+export const easingOptions = ['Easy', 'Easy-in', 'Easy-out', 'Easy-in-out'];
+
+export const elementsData = [
+  {
+    id: 'title',
+    animation: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0,
+      blur: 0,
+      speed: 0,
+      delay: 0,
+      easing: 'easy',
+      replay: false,
+    },
+  },
+  {
+    id: 'text',
+    animation: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0,
+      blur: 0,
+      speed: 0,
+      delay: 0,
+      easing: 'easy',
+      replay: false,
+    },
+  },
+  {
+    id: 'button',
+    animation: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0,
+      blur: 0,
+      speed: 0,
+      delay: 0,
+      easing: 'easy',
+      replay: false,
+    },
+  },
+  {
+    id: 'picture',
+    animation: {
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0,
+      blur: 0,
+      speed: 0,
+      delay: 0,
+      easing: 'easy',
+      replay: false,
+    },
+  },
+];
