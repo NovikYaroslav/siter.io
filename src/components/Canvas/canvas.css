@@ -1,10 +1,10 @@
 .canvas {
-    overflow: hidden;
     display: flex;
     justify-content: center;
-    max-width: 874px;
-    max-height: 498px;
+    min-width: 874px;
+    height: 498px;
     gap: 60px;
+    overflow: hidden;
     padding: 73px 70px 80px 70px;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;

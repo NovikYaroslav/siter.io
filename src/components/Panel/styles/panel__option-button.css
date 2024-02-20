@@ -1,4 +1,4 @@
-.panel__slider-button {
+.panel__option-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
    margin-left: 7px;
 }
 
-.panel__slider-button:hover {
+.panel__option-button:hover {
     cursor: pointer;
     opacity: 0.8;
 }

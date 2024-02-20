@@ -1,17 +1,21 @@
 .panel {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
-    width:240px;
+    max-width:240px;
     height: 100%;
     align-items: center;
     gap: 16px;
-    padding: 15px 15px;
+    padding: 15px 15px 0 15px;
+    box-sizing: border-box;
     background-color: rgb(255, 255, 255);
 }
 
 @import url('./styles/panel__option-container.css');
-@import url('./styles/panel__slider-title.css');
+@import url('./styles/panel__option-title.css');
 @import url('./styles/panel__slider-value.css');
 @import url('./styles/panel__slider.css');
-@import url('./styles/panel__slider-option.css');
-@import url('./styles/panel__slider-button.css');
+@import url('./styles/panel__option-select.css');
+@import url('./styles/panel__option-button.css');

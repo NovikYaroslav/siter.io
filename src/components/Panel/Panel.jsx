@@ -58,7 +58,7 @@ export default function Panel() {
     <div className='panel'>
       {settings.map((setting) => (
         <div className='panel__option-container' key={setting.name}>
-          <label className='panel__slider-title'>{setting.name}</label>
+          <label className='panel__option-title'>{setting.name}</label>
           <input
             type='range'
             max={setting.max}
@@ -84,9 +84,9 @@ export default function Panel() {
       ))}
       <div className='panel__option-container'>
         <div className='panel__option-container_dropdown'>
-          <label className='panel__slider-title'>Easing</label>
+          <label className='panel__option-title'>Easing</label>
           <select
-            className='panel__slider-option'
+            className='panel__option-select'
             onChange={(event) => handleEasingChange(event)}
             value={easing}
           >
@@ -100,9 +100,9 @@ export default function Panel() {
       </div>
       <div className='panel__option-container'>
         <div className='panel__option-container_dropdown'>
-          <label className='panel__slider-title'>Replay</label>
+          <label className='panel__option-title'>Replay</label>
           <button
-            className='panel__slider-button'
+            className='panel__option-button'
             onClick={() => handleReplayChange()}
           >
             <img src={replay ? on : off} />

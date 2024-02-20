@@ -1,0 +1,7 @@
+.preview {
+    display: flex;
+    height: calc(100vh - 58px);
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}

@@ -1,4 +1,4 @@
-.panel__slider-option {
+.panel__option-select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -6,7 +6,6 @@
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 15px;
-
     color: rgb(68, 68, 68);
     font-family: Inter;
     font-size: 12px;

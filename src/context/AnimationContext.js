@@ -11,6 +11,10 @@ const AnimationContextProvider = ({ children }) => {
     setElements(elementsData);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('elements', JSON.stringify(elements));
+  }, [elements]);
+
   const selectElement = (element) => {
     setSelectedElement(element);
   };

@@ -131,25 +131,27 @@ export default function Canvas() {
       </div>
 
       <div className='canvas__container-right'>
-        <div
-          className={
-            selectedElement === 'picture'
-              ? 'canvas__selected_top canvas__picture'
-              : null
-          }
-        >
+        <div className='test' style={{ position: 'relative' }}>
           <div
             className={
-              selectedElement === 'picture' ? 'canvas__selected_bottom' : null
+              selectedElement === 'picture'
+                ? 'canvas__selected_top canvas__picture'
+                : null
             }
           >
-            <img
-              className='canvas__picture'
-              src={picture}
-              alt='test picture'
-              id='picture'
-              onClick={(evt) => handleElementSelection(evt)}
-            />
+            <div
+              className={
+                selectedElement === 'picture' ? 'canvas__selected_bottom' : null
+              }
+            >
+              <img
+                className='canvas__picture'
+                src={picture}
+                alt='test picture'
+                id='picture'
+                onClick={(evt) => handleElementSelection(evt)}
+              />
+            </div>
           </div>
         </div>
       </div>
