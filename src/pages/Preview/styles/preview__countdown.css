@@ -1,0 +1,7 @@
+.preview__countdown {
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    font-size: 90px;
+    color: white;
+}

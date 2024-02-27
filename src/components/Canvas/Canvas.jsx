@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAnimation } from '../../context/AnimationContext';
 import { ValueExtractor } from '../../utils/formating-functions';
@@ -6,12 +7,11 @@ import './canvas.css';
 import picture from '../../img/picture.png';
 
 export default function Canvas() {
+  const location = useLocation();
+  const preview = location.pathname === '/preview';
   const [animated, setAnimated] = useState(false);
   const { elements, selectElement, selectedElement } = useAnimation();
   const [x, setX] = useState(0);
-
-  console.log(elements);
-  console.log(ValueExtractor(elements, selectedElement, 'opacity'));
 
   function handleElementSelection(evt) {
     selectElement(evt.target.id);

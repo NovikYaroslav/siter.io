@@ -16,3 +16,7 @@
     text-transform: capitalize;
 }
 
+.canvas__button:hover {
+cursor: pointer;
+opacity: 0.8;
+}

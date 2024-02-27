@@ -1,7 +1,11 @@
 .preview {
+    position: relative;
     display: flex;
+    flex-direction: column;
     height: calc(100vh - 58px);
     justify-content: center;
     align-items: center;
     background-color: black;
 }
+
+@import url('./styles/preview__countdown.css');

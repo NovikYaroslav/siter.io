@@ -6,9 +6,14 @@ const AnimationContext = createContext();
 const AnimationContextProvider = ({ children }) => {
   const [elements, setElements] = useState([]);
   const [selectedElement, setSelectedElement] = useState('');
+  const savedSettings = JSON.parse(localStorage.getItem('elements'));
 
   useEffect(() => {
-    setElements(elementsData);
+    if (savedSettings.length) {
+      setElements(savedSettings);
+    } else {
+      setElements(elementsData);
+    }
   }, []);
 
   useEffect(() => {
@@ -34,48 +39,6 @@ const AnimationContextProvider = ({ children }) => {
     });
     setElements(updatedElements);
   };
-
-  // const removeReview = (id) => {
-  //   const updatedReviews = reviews.filter((review) => review.id !== id);
-  //   setReviews(updatedReviews);
-  //   saveJson(updatedReviews);
-  // };
-
-  // const editReview = ({
-  //   editedId,
-  //   editedTitle,
-  //   editedEmail,
-  //   editedPhone,
-  //   editedDate,
-  //   editedReviewRate,
-  //   editedContent,
-  // }) => {
-  //   console.log(editedDate);
-  //   const updatedReviews = reviews.map((review) =>
-  //     review.id === editedId
-  //       ? {
-  //           ...review,
-  //           title: editedTitle,
-  //           email: editedEmail,
-  //           phone: editedPhone,
-  //           date: formatDate(editedDate),
-  //           review: { ...review.review, reviewRate: editedReviewRate },
-  //           content: editedContent,
-  //         }
-  //       : review
-  //   );
-  //   setReviews(updatedReviews);
-  //   saveJson(updatedReviews);
-  // };
-
-  // const tooglePopupVisability = () => {
-  //   setIsPopupOpen(!isPopupOpen);
-  // };
-
-  // useEffect(() => {
-  //   setReviews(initialReviews.reviews);
-  //   setReviewsOnMain(shuffleArray(initialReviews.reviews));
-  // }, []);
 
   return (
     <AnimationContext.Provider

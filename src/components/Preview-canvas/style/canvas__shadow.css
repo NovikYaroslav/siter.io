@@ -1,0 +1,6 @@
+.canvas__shadow {
+    border-radius: 4.8px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}

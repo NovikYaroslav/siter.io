@@ -1,0 +1,11 @@
+.canvas__title {
+    margin: 0;
+    padding-top: 18px;
+    color: rgb(34, 34, 34);
+font-family: Inter;
+font-size: 43px;
+font-weight: 700;
+line-height: 52px;
+letter-spacing: -2px;
+text-align: left;
+}

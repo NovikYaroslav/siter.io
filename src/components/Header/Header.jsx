@@ -6,8 +6,6 @@ export default function Header() {
   const navigate = useNavigate();
   const currentLocation = useLocation();
 
-  console.log(currentLocation.pathname);
-
   function handleNavigationButtonClick() {
     currentLocation.pathname === '/preview'
       ? navigate('/')
