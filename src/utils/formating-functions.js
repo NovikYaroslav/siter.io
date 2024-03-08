@@ -18,7 +18,7 @@ export function ValueExtractor(elements, id, parameter) {
     return 0;
   } else {
     const selectedElement = elements.find((element) => element.id === id);
-    return parameter === 'easing'
+    return parameter === 'easing' || 'replay'
       ? selectedElement.animation[parameter]
       : Number(selectedElement.animation[parameter]);
   }

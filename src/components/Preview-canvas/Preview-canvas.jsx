@@ -6,11 +6,10 @@ import './canvas.css';
 import picture from '../../img/picture.png';
 
 export default function PreviewCanvas({ launched }) {
-  const [animated, setAnimated] = useState(false);
   const { elements } = useAnimation();
 
   return (
-    <section className='canvas'>
+    <motion.section className='canvas'>
       {launched ? (
         <>
           <div className='canvas__container-left '>
@@ -26,10 +25,14 @@ export default function PreviewCanvas({ launched }) {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                transition: {
-                  duration: ValueExtractor(elements, 'title', 'speed'),
-                  delay: ValueExtractor(elements, 'title', 'delay'),
-                },
+              }}
+              transition={{
+                duration: ValueExtractor(elements, 'title', 'speed'),
+                delay: ValueExtractor(elements, 'title', 'delay'),
+                ease: ValueExtractor(elements, 'title', 'easing'),
+                repeat: ValueExtractor(elements, 'title', 'replay')
+                  ? Infinity
+                  : undefined,
               }}
               className='canvas__title'
               id='title'
@@ -49,10 +52,14 @@ export default function PreviewCanvas({ launched }) {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                transition: {
-                  duration: ValueExtractor(elements, 'text', 'speed'),
-                  delay: ValueExtractor(elements, 'text', 'delay'),
-                },
+              }}
+              transition={{
+                duration: ValueExtractor(elements, 'text', 'speed'),
+                delay: ValueExtractor(elements, 'text', 'delay'),
+                ease: ValueExtractor(elements, 'text', 'easing'),
+                repeat: ValueExtractor(elements, 'text', 'replay')
+                  ? Infinity
+                  : undefined,
               }}
               className='canvas__text'
               id='text'
@@ -77,10 +84,14 @@ export default function PreviewCanvas({ launched }) {
                 y: 0,
                 opacity: 1,
                 scale: 1,
-                transition: {
-                  duration: ValueExtractor(elements, 'button', 'speed'),
-                  delay: ValueExtractor(elements, 'button', 'delay'),
-                },
+              }}
+              transition={{
+                duration: ValueExtractor(elements, 'button', 'speed'),
+                delay: ValueExtractor(elements, 'button', 'delay'),
+                ease: ValueExtractor(elements, 'button', 'easing'),
+                repeat: ValueExtractor(elements, 'button', 'replay')
+                  ? Infinity
+                  : undefined,
               }}
               className='canvas__button'
               id='button'
@@ -101,10 +112,14 @@ export default function PreviewCanvas({ launched }) {
               y: 0,
               opacity: 1,
               scale: 1,
-              transition: {
-                duration: ValueExtractor(elements, 'picture', 'speed'),
-                delay: ValueExtractor(elements, 'picture', 'delay'),
-              },
+            }}
+            transition={{
+              duration: ValueExtractor(elements, 'picture', 'speed'),
+              delay: ValueExtractor(elements, 'picture', 'delay'),
+              // ease: ValueExtractor(elements, 'picture', 'easing'),
+              repeat: ValueExtractor(elements, 'picture', 'replay')
+                ? Infinity
+                : undefined,
             }}
             className='canvas__picture'
             src={picture}
@@ -113,6 +128,6 @@ export default function PreviewCanvas({ launched }) {
           />
         </>
       ) : null}
-    </section>
+    </motion.section>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Canvas from '../../components/Canvas/Canvas';
 import Panel from '../../components/Panel/Panel';
 import './main.css';

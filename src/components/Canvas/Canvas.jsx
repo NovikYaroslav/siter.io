@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAnimation } from '../../context/AnimationContext';
-import { ValueExtractor } from '../../utils/formating-functions';
 import './canvas.css';
 import picture from '../../img/picture.png';
 
@@ -35,27 +34,6 @@ export default function Canvas() {
             }
           >
             <motion.h1
-              // initial={{
-              //   x: 8,
-              //   y: -10,
-              //   opacity: 1,
-              //   scale: 1,
-              // }}
-              // animate={
-              //   animated
-              //     ? {
-              //         x: 0,
-              //         y: -10,
-              //         opacity: 1,
-              //         scale: 1,
-              // transition: {
-              //   duration: 3,
-              //   delay: 0.2,
-              //   ease: 'easeInOut',
-              // },
-              // }
-              // : {}
-              // }
               className='canvas__title'
               id='title'
               onClick={(evt) => handleElementSelection(evt)}
@@ -107,19 +85,6 @@ export default function Canvas() {
           {selectedElement === 'button' ? (
             <div className='canvas__shadow'>
               <motion.button
-                animate={{
-                  x: ValueExtractor(elements, 'button', 'x'),
-                  y: ValueExtractor(elements, 'button', 'y'),
-                  opacity: `${Number(
-                    ValueExtractor(elements, 'button', 'opacity')
-                  )}%`,
-                  scale: ValueExtractor(elements, 'button', 'scale'),
-                  filter: `blur(${ValueExtractor(
-                    elements,
-                    'button',
-                    'blur'
-                  )}px)`,
-                }}
                 className='canvas__button canvas__shadow'
                 id='button'
               >

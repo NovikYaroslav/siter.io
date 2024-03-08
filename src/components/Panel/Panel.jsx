@@ -1,16 +1,13 @@
 import { useEffect, useState } from 'react';
 import './panel.css';
 import { settings, easingOptions } from '../../utils/data';
-import { formatSliderValue } from '../../utils/formating-functions';
 import { useAnimation } from '../../context/AnimationContext';
 import { ValueExtractor } from '../../utils/formating-functions';
-import arrow from '../../img/arrow.svg';
 import off from '../../img/Checkbox.png';
 import on from '../../img/Checkbox.svg';
 
 export default function Panel() {
   const { elements, selectedElement, editAnimation } = useAnimation();
-
   const [replay, setReplay] = useState(false);
   const [easing, setEasing] = useState('Easy');
 
@@ -89,10 +86,14 @@ export default function Panel() {
             className='panel__option-select'
             onChange={(event) => handleEasingChange(event)}
             value={easing}
+            disabled={!selectedElement}
           >
-            {easingOptions.map((el) => (
-              <option value={el} key={el}>
-                {el}
+            {easingOptions.map((option) => (
+              <option
+                value={Object.keys(option)[0]}
+                key={Object.keys(option)[0]}
+              >
+                {Object.values(option)[0]}
               </option>
             ))}
           </select>
@@ -104,6 +105,7 @@ export default function Panel() {
           <button
             className='panel__option-button'
             onClick={() => handleReplayChange()}
+            disabled={selectedElement ? false : true}
           >
             <img src={replay ? on : off} />
           </button>

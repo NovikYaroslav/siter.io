@@ -44,18 +44,18 @@ export default function Preview() {
   const [motionControls, setMotionControls] = useState(null);
 
   return (
-    <section className='preview'>
+    <motion.section className='preview'>
       <motion.p
-        // initial={{
-        //   scale: 0,
-        // }}
-        // animate={motionControls}
+        initial={{
+          scale: 0,
+        }}
+        animate={motionControls}
         className='preview__countdown'
         style={{ display: countdown === 0 ? 'none' : 'block' }}
       >
         {countdown}
       </motion.p>
       <PreviewCanvas launched={launched} />
-    </section>
+    </motion.section>
   );
 }

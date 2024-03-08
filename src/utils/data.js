@@ -8,7 +8,19 @@ export const settings = [
   { name: 'delay', min: 0, max: 10, step: 1, unit: 's' },
 ];
 
-export const easingOptions = ['Easy', 'Easy-in', 'Easy-out', 'Easy-in-out'];
+export const easingOptions = [
+  { linear: 'Liner' },
+  { easeIn: 'Easy-in' },
+  { easeOut: 'Easy-out' },
+  { easeInOut: 'Easy-in-out' },
+  { circIn: 'Circ-in' },
+  { circOut: 'Circ-out' },
+  { circInOut: 'Circ-in-out' },
+  { backIn: 'Back-in' },
+  { backOut: 'Back-out' },
+  { backInOut: 'Back-in-out' },
+  { anticipate: 'Anticipate' },
+];
 
 export const elementsData = [
   {
